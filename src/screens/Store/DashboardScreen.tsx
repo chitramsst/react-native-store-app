@@ -135,12 +135,14 @@ export default function TableListScreen({ navigation }: TableScreenProps) {
                         <View className="w-full  justify-between flex flex-row items-center">
                             <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
                                 <View className="bg-gray-800 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                                <Icon name="info" size={11} color="#FFFF" />
+                                    <Icon name="info" size={11} color="#FFFF" />
                                 </View>
                             </View>
                             <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                                <Icon name="dollar" size={14} color="#FB814B" />
-                                <Text className="text-[13px] font-semibold text-gray-400"> 4512.56 </Text>
+                                <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                                    <Icon name="dollar" size={14} color="#FFFF" solid/>
+                                </View>
+                                <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                             </View>
 
                         </View>

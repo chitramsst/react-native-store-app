@@ -1,6 +1,6 @@
 import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
 import {  createStackNavigator } from '@react-navigation/stack';
-import {  StatusBar, View, Image} from 'react-native';
+import {  StatusBar, View, Image, Text} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
@@ -32,11 +32,15 @@ function AuthStack() {
 function HomeStack() {
     return (
         <Tab.Navigator initialRouteName='Dashboard' screenOptions={{headerShown : false,tabBarShowLabel : false,tabBarActiveTintColor : '#6941C6',tabBarStyle : {backgroundColor : '#000000',borderTopLeftRadius : 24,borderTopRightRadius : 24,borderBottomRightRadius : 24,borderBottomLeftRadius : 24,height : 64,marginBottom:10,margin:1}}}>
-            <Tab.Screen name="Dashboard" component={DashboardScreen} options={{tabBarIcon : (item) => item.focused ? <View className='flex flex-col items-center'><HomeIcon name="home"  color='#FB814B'></HomeIcon><View className='h-1.5 mt-0.5 w-1.5 rounded-full' style={{backgroundColor : '#FB814B'}}></View></View>: <HomeIcon name="home" size={20} color={item.color}></HomeIcon>}} />
-            <Tab.Screen name="Orders" component={OrdersScreen} options={{tabBarIcon : (item) => item.focused ? <View className='flex flex-col items-center'><DashboardIcon name="home"  color={item.color}></DashboardIcon><View className='h-1.5 mt-0.5 w-1.5 rounded-full' style={{backgroundColor : item.color}}></View></View>: <DashboardIcon name="home" size={20} color={item.color}></DashboardIcon>}} />
+            <Tab.Screen name="Dashboard" component={DashboardScreen} options={{tabBarIcon : (item) => item.focused ? <View className='flex flex-col items-center'><HomeIcon name="home"  color='#FB814B'></HomeIcon><Text style={{color : '#FB814B'}} className="text-xs">Home</Text></View>:<View className='flex flex-col items-center'><HomeIcon name="home"  color={item.color}></HomeIcon><Text className="text-gray-100 text-xs">Home</Text></View>}} />
+
+            <Tab.Screen name="Orders" component={OrdersScreen} options={{tabBarIcon : (item) => item.focused ? <View className='flex flex-col items-center'><DashboardIcon color='#FB814B'></DashboardIcon><Text style={{color : '#FB814B'}} className="text-xs">Orders</Text></View>:<View className='flex flex-col items-center'><DashboardIcon  color={item.color}></DashboardIcon><Text className="text-gray-100 text-xs">Orders</Text></View>}} />
+           
+            {/* <Tab.Screen name="Orders" component={OrdersScreen} options={{tabBarIcon : (item) => item.focused ? <View className='flex flex-col items-center'><DashboardIcon name="home"  color={item.color}></DashboardIcon><View className='h-1.5 mt-0.5 w-1.5 rounded-full' style={{backgroundColor : item.color}}></View></View>: <DashboardIcon name="home" size={20} color={item.color}></DashboardIcon>}} />
             <Tab.Screen name="Inventory" component={InventoryScreen} options={{tabBarIcon : (item) => item.focused ? <View className='flex flex-col items-center'><InventoryIcon name="home"  color={item.color}></InventoryIcon><View className='h-1.5 mt-0.5 w-1.5 rounded-full' style={{backgroundColor : item.color}}></View></View>: <InventoryIcon name="home" size={20} color={item.color}></InventoryIcon>}} />
             <Tab.Screen name="More" component={MoreScreen} options={{tabBarIcon : (item) => item.focused ? <View className='flex flex-col items-center'><MoreIcon name="home"  color={item.color}></MoreIcon><View className='h-1.5 mt-0.5 w-1.5 rounded-full' style={{backgroundColor : item.color}}></View></View>: <MoreIcon name="home" size={20} color={item.color}></MoreIcon>}} />
-        </Tab.Navigator>
+         */}
+         </Tab.Navigator>
     )
 }
 
