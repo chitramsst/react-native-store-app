@@ -13,6 +13,7 @@ import OrdersScreen from './screens/Store/Orders/OrdersScreen';
 import OrderDetailScreen from './screens/Store/Orders/OrderDetailScreen';
 import OrderAcceptScreen from './screens/Store/Orders/OrderAcceptScreen';
 import OrderCompletedScreen from './screens/Store/Orders/OrderCompletedScreen';
+import OrderPaymentVerificationScreen from './screens/Store/Orders/OrderPaymentVerificationScreen';
 
 import MoreScreen from './screens/Store/MoreScreen';
 import InventoryScreen from './screens/Store/InventoryScreen';
@@ -62,6 +63,7 @@ function Navigator(): React.JSX.Element {
                         <Stack.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }} />
                         <Stack.Screen name="OrderDetail" component={OrderDetailScreen} options={{ headerShown: false }} />
                         <Stack.Screen name="OrderAccept" component={OrderAcceptScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="OrderPaymentVerification" component={OrderPaymentVerificationScreen} options={{ headerShown: false }} />
                         <Stack.Screen name="OrderCompleted" component={OrderCompletedScreen} options={{ headerShown: false }} />
                         
                     </Stack.Navigator>

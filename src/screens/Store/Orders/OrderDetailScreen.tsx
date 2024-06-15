@@ -26,6 +26,7 @@ export default function OrderDetailScreen({ navigation }) {
     return (
 
         <View className="w-full h-full">
+
             <ScrollView className="w-full h-full flex bg-black/7" style={styles.container}  >
                 <View className=" p-5 w-full">
                     {/* title section */}

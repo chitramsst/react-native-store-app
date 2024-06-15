@@ -6,7 +6,7 @@ import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 
 
-export default function OrderDetailScreen({ navigation }) {
+export default function OrderAcceptScreen({ navigation }) {
 
     const getTextLength = (text) => {
         const textWithoutDollar = text.slice(1);
@@ -18,7 +18,7 @@ export default function OrderDetailScreen({ navigation }) {
 
 
     const handlePress = (item: string) => {
-        navigation.navigate('OrderCompleted');
+        navigation.navigate('OrderPaymentVerification');
     };
 
     const handleBack = () => {
