@@ -18,7 +18,11 @@ export default function OrderDetailScreen({ navigation }) {
 
 
     const handlePress = (item: string) => {
-        navigation.navigate('Items', { selectedItem: item });
+        navigation.navigate('OrderCompleted');
+    };
+
+    const handleBack = () => {
+        navigation.goBack(); // Navigate back
     };
 
     return (
@@ -142,9 +146,10 @@ export default function OrderDetailScreen({ navigation }) {
                 </View>
             </ScrollView>
             <View className="py-2 rounded-2xl bottom-0 absolute w-full my-5 px-2">
-                <View className="flex flex-row justify-center items-center bg-black px-5 py-3 rounded-full w-full">
-                    <View className="border-r-[0.5px] w-1/2 border-[#FFFF]"><Text className="text-[14px] text-gray-50 w-full text-center"> Reject </Text></View>
-                    <Text className="text-[14px]  text-[#3FDD78] w-1/2 text-center"> Accept Order</Text>
+                <View className="flex flex-row justify-center items-center bg-black/90 px-5 py-3 rounded-full w-full">
+                <Pressable onPress={() => handlePress()} className="w-1/2">
+                    <Text className="text-[15px]  text-[#FB814B] w-full text-center font-bold"> Mark As Food Ready</Text>
+                    </Pressable>
                 </View>
             </View>
         </View >

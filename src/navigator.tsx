@@ -9,8 +9,10 @@ import LoginScreen from './screens/Auth/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import SyncCodeScreen from './screens/Auth/SyncCodeScreen';
 import DashboardScreen from './screens/Store/DashboardScreen';
-import OrdersScreen from './screens/Store/OrdersScreen';
-import OrderDetailScreen from './screens/Store/OrderDetailScreen';
+import OrdersScreen from './screens/Store/Orders/OrdersScreen';
+import OrderDetailScreen from './screens/Store/Orders/OrderDetailScreen';
+import OrderAcceptScreen from './screens/Store/Orders/OrderAcceptScreen';
+import OrderCompletedScreen from './screens/Store/Orders/OrderCompletedScreen';
 
 import MoreScreen from './screens/Store/MoreScreen';
 import InventoryScreen from './screens/Store/InventoryScreen';
@@ -59,7 +61,9 @@ function Navigator(): React.JSX.Element {
                        <Stack.Navigator initialRouteName={"HomeStack"} screenOptions={{ gestureResponseDistance: 20, gestureDirection: 'horizontal' }}>
                         <Stack.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }} />
                         <Stack.Screen name="OrderDetail" component={OrderDetailScreen} options={{ headerShown: false }} />
-                   
+                        <Stack.Screen name="OrderAccept" component={OrderAcceptScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="OrderCompleted" component={OrderCompletedScreen} options={{ headerShown: false }} />
+                        
                     </Stack.Navigator>
                 </>
             )

@@ -27,7 +27,7 @@ export default function OrdersScreen({ navigation }) {
       <View className="w-full h-full flex bg-black/7" style={styles.container}  >
         <View className=" p-5 w-full">
           <View className="w-full flex flex-col justify-center items-center">
-            <Image source={require('../../assets/images/fyra-logo.png')} />
+            <Image source={require('../../../assets/images/fyra-logo.png')} />
           </View>
 
           {/* search section */}
@@ -47,7 +47,7 @@ export default function OrdersScreen({ navigation }) {
               />
             </View>
             <View className='flex flex-row mt-3 items-center bg-white rounded-full mb-1'>
-              <Image source={require('../../assets/images/search-menu.png')} className='h-9 w-9' />
+              <Image source={require('../../../assets/images/search-menu.png')} className='h-9 w-9' />
             </View>
           </View>
           {/* 
