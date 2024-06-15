@@ -10,12 +10,15 @@ import HomeScreen from './screens/HomeScreen';
 import SyncCodeScreen from './screens/Auth/SyncCodeScreen';
 import DashboardScreen from './screens/Store/DashboardScreen';
 import OrdersScreen from './screens/Store/OrdersScreen';
+import OrderDetailScreen from './screens/Store/OrderDetailScreen';
+
 import MoreScreen from './screens/Store/MoreScreen';
 import InventoryScreen from './screens/Store/InventoryScreen';
 import DashboardIcon from './assets/icons/DashboardIcon';
 import MoreIcon from './assets/icons/MoreIcon';
 import HomeIcon from './assets/icons/HomeIcon';
 import InventoryIcon from './assets/icons/InventoryIcon';
+
 
 function AuthStack() {
     return (
@@ -55,6 +58,8 @@ function Navigator(): React.JSX.Element {
                 <>
                        <Stack.Navigator initialRouteName={"HomeStack"} screenOptions={{ gestureResponseDistance: 20, gestureDirection: 'horizontal' }}>
                         <Stack.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }} />
+                        <Stack.Screen name="OrderDetail" component={OrderDetailScreen} options={{ headerShown: false }} />
+                   
                     </Stack.Navigator>
                 </>
             )

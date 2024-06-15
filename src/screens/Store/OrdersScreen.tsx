@@ -6,14 +6,7 @@ import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 
 
-
-interface TableScreenProps {
-  navigation: any;
-  mainFloorContent: string[];
-  firstFloorContent: string[];
-}
-
-export default function OrdersScreen({ navigation }: TableScreenProps) {
+export default function OrdersScreen({ navigation }) {
 
   const getTextLength = (text) => {
     const textWithoutDollar = text.slice(1);
@@ -23,10 +16,9 @@ export default function OrdersScreen({ navigation }: TableScreenProps) {
   const text = "$512.64";
   const textLength = getTextLength(text);
 
-
-  const handlePress = (item: string) => {
-    navigation.navigate('Items', { selectedItem: item });
-  };
+  const handlePress = () => {
+    navigation.navigate('OrderDetail');
+};
 
   return (
 
@@ -62,6 +54,122 @@ export default function OrdersScreen({ navigation }: TableScreenProps) {
 body section */}
           <ScrollView className="flex flex-col space-y-2">
             {/* PICKUP */}
+            <Pressable  onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
+              <View className="w-full  justify-between flex flex-row items-center">
+                <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                  <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
+                  <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
+                    <Icon name="clock" size={14} color="#FB814B" />
+                    <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
+                  </View>
+                </View>
+                <View className="flex  flex-row justify-start items-center  bg-[#FB814B] rounded-full px-2   m-1  text-white">
+                  <Text className="text-white text-[13px] font-semibold">Pickup</Text>
+                </View>
+              </View>
+              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
+                <View className="mt-2 flex justify-center items-center">
+                  <IconMaterial name="person" size={17} color="#9CA3AF" />
+                </View>
+                <Text className="text-sm font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
+              </View>
+
+              {/* preparing */}
+              <View className="px-1 py-2" >
+                <View className="w-full bg-gray-100 rounded-lg  flex flex-col mt-1 p-2">
+                  <View className="w-full  justify-between flex flex-row items-center">
+                    <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                      <Text className="text-gray-400 font-bold">Items</Text>
+                    </View>
+                    <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
+                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
+                    </View>
+                  </View>
+                  <View className="flex flex-col  pb-2 space-y-1 px-1">
+                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[13px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
+                  </View>
+                </View>
+
+              </View>
+
+              {/* End section */}
+              <View className="w-full  justify-between flex flex-row items-center">
+                <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
+                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                    <Icon name="info" size={11} color="#FFFF" />
+                  </View>
+                </View>
+                <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
+                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  </View>
+                  <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
+                </View>
+
+              </View>
+            </Pressable>
+
+
+            {/* DELIVERY */}
+            <View className="w-full bg-white rounded-lg flex flex-col mt-3 p-2">
+              <View className="w-full  justify-between flex flex-row items-center">
+                <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                  <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
+                  <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
+                    <Icon name="clock" size={14} color="#FB814B" />
+                    <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
+                  </View>
+                </View>
+                <View className="flex  flex-row justify-start items-center  bg-[#3FDD78] rounded-full px-2   m-1  text-white">
+                  <Text className="text-white text-[13px] font-semibold">Delivery</Text>
+                </View>
+              </View>
+              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
+                <View className="mt-2 flex justify-center items-center">
+                  <IconMaterial name="person" size={17} color="#9CA3AF" />
+                </View>
+                <Text className="text-sm font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
+              </View>
+
+              {/* preparing */}
+              <View className="px-1 py-2" >
+                <View className="w-full bg-gray-100 rounded-lg  flex flex-col mt-1 p-2">
+                  <View className="w-full  justify-between flex flex-row items-center">
+                    <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                      <Text className="text-gray-400 font-bold">Items</Text>
+                    </View>
+                    <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
+                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
+                    </View>
+                  </View>
+                  <View className="flex flex-col  pb-2 space-y-1 px-1">
+                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[13px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
+                  </View>
+                </View>
+              </View>
+
+              {/* End section */}
+              <View className="w-full  justify-between flex flex-row items-center">
+                <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
+                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                    <Icon name="info" size={11} color="#FFFF" />
+                  </View>
+                </View>
+                <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
+                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  </View>
+                  <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
+                </View>
+
+              </View>
+            </View>
+
+            {/* PICKUP */}
             <View className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
@@ -90,7 +198,7 @@ body section */}
                       <Text className="text-gray-400 font-bold">Items</Text>
                     </View>
                     <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
-                      <Text className="text-[#FB814B] text-xs font-bold">Preparing...</Text>
+                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
                     </View>
                   </View>
                   <View className="flex flex-col  pb-2 space-y-1 px-1">
@@ -149,7 +257,7 @@ body section */}
                       <Text className="text-gray-400 font-bold">Items</Text>
                     </View>
                     <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
-                      <Text className="text-[#FB814B] text-xs font-bold">Preparing...</Text>
+                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
                     </View>
                   </View>
                   <View className="flex flex-col  pb-2 space-y-1 px-1">
@@ -207,7 +315,7 @@ body section */}
                       <Text className="text-gray-400 font-bold">Items</Text>
                     </View>
                     <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
-                      <Text className="text-[#FB814B] text-xs font-bold">Preparing...</Text>
+                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
                     </View>
                   </View>
                   <View className="flex flex-col  pb-2 space-y-1 px-1">
@@ -266,124 +374,7 @@ body section */}
                       <Text className="text-gray-400 font-bold">Items</Text>
                     </View>
                     <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
-                      <Text className="text-[#FB814B] text-xs font-bold">Preparing...</Text>
-                    </View>
-                  </View>
-                  <View className="flex flex-col  pb-2 space-y-1 px-1">
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
-                  </View>
-                </View>
-
-              </View>
-
-              {/* End section */}
-              <View className="w-full  justify-between flex flex-row items-center">
-                <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
-                  </View>
-                </View>
-                <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
-                  </View>
-                  <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
-                </View>
-
-              </View>
-            </View>
-
-            {/* PICKUP */}
-            <View className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
-              <View className="w-full  justify-between flex flex-row items-center">
-                <View className="flex flex-row m-1 justify-center items-center space-x-4">
-                  <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
-                  <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
-                    <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
-                  </View>
-                </View>
-                <View className="flex  flex-row justify-start items-center  bg-[#FB814B] rounded-full px-2   m-1  text-white">
-                  <Text className="text-white text-[13px] font-semibold">Pickup</Text>
-                </View>
-              </View>
-              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
-                <View className="mt-2 flex justify-center items-center">
-                  <IconMaterial name="person" size={17} color="#9CA3AF" />
-                </View>
-                <Text className="text-sm font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
-              </View>
-
-              {/* preparing */}
-              <View className="px-1 py-2" >
-                <View className="w-full bg-gray-100 rounded-lg  flex flex-col mt-1 p-2">
-                  <View className="w-full  justify-between flex flex-row items-center">
-                    <View className="flex flex-row m-1 justify-center items-center space-x-4">
-                      <Text className="text-gray-400 font-bold">Items</Text>
-                    </View>
-                    <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
-                      <Text className="text-[#FB814B] text-xs font-bold">Preparing...</Text>
-                    </View>
-                  </View>
-                  <View className="flex flex-col  pb-2 space-y-1 px-1">
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
-                  </View>
-                </View>
-
-              </View>
-
-              {/* End section */}
-              <View className="w-full  justify-between flex flex-row items-center">
-                <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
-                  </View>
-                </View>
-                <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
-                  </View>
-                  <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
-                </View>
-
-              </View>
-            </View>
-
-
-            {/* DELIVERY */}
-            <View className="w-full bg-white rounded-lg flex flex-col mt-3 p-2">
-              <View className="w-full  justify-between flex flex-row items-center">
-                <View className="flex flex-row m-1 justify-center items-center space-x-4">
-                  <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
-                  <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
-                    <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
-                  </View>
-                </View>
-                <View className="flex  flex-row justify-start items-center  bg-[#3FDD78] rounded-full px-2   m-1  text-white">
-                  <Text className="text-white text-[13px] font-semibold">Delivery</Text>
-                </View>
-              </View>
-              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
-                <View className="mt-2 flex justify-center items-center">
-                  <IconMaterial name="person" size={17} color="#9CA3AF" />
-                </View>
-                <Text className="text-sm font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
-              </View>
-
-              {/* preparing */}
-              <View className="px-1 py-2" >
-                <View className="w-full bg-gray-100 rounded-lg  flex flex-col mt-1 p-2">
-                  <View className="w-full  justify-between flex flex-row items-center">
-                    <View className="flex flex-row m-1 justify-center items-center space-x-4">
-                      <Text className="text-gray-400 font-bold">Items</Text>
-                    </View>
-                    <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
-                      <Text className="text-[#FB814B] text-xs font-bold">Preparing...</Text>
+                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
                     </View>
                   </View>
                   <View className="flex flex-col  pb-2 space-y-1 px-1">

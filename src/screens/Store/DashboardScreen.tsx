@@ -5,15 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome6';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 
 
-
-
-interface TableScreenProps {
-    navigation: any;
-    mainFloorContent: string[];
-    firstFloorContent: string[];
-}
-
-export default function TableListScreen({ navigation }: TableScreenProps) {
+export default function DashboardScreen({ navigation }) {
 
     const getTextLength = (text) => {
         const textWithoutDollar = text.slice(1);
