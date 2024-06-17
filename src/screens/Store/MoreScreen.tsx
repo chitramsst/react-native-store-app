@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, Button, View, FlatList, ScrollView, TouchableOpacity, Alert, ActivityIndicator, Image, ImageBackground, Pressable, TextInput, Modal, Keyboard } from 'react-native';
+import { Text, StyleSheet, Button, View, FlatList, Switch, ScrollView, TouchableOpacity, Alert, ActivityIndicator, Image, ImageBackground, Pressable, TextInput, Modal, Keyboard } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import ToggleSwitch from 'toggle-switch-react-native'
+
 
 export default function MoreScreen({ navigation }) {
+
+  const [isEnabled, setIsEnabled] = useState(true);
+
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   const getTextLength = (text) => {
     const textWithoutDollar = text.slice(1);
@@ -23,33 +29,31 @@ export default function MoreScreen({ navigation }) {
   return (
 
     <View className="w-full h-full">
-
       <View className="w-full h-full flex bg-black/7" style={styles.container}  >
         <View className=" p-5 w-full">
           <View className="w-full flex flex-col justify-center items-center">
             <Image source={require('../../assets/images/fyra-logo.png')} />
           </View>
-
-          {/* search section */}
-
-          <View className='flex flex-row w-full justify-center items-center space-x-1' >
-
-            <View className='flex flex-row mt-3 items-center bg-white rounded-full mb-1 w-11/12 h-10' >
-              <View className='flex items-start pl-3'>
-                <Pressable className='w-6 h-6 rounded-full flex items-center justify-center '>
-                  <IconFontisto name="search" size={14} color="#6F767E" />
-                </Pressable>
+          <View className="w-full bg-white max-h-28 min-h-28 rounded-lg flex flex-row justify-center items-center mt-7">
+            <View className="justify-between flex flex-row items-center w-full p-2">
+              <View className="flex flex-row items-center justify-center">
+                <View className="flex justify-center items-center">
+                <Image source={require('../../assets/icons/moreIcon.png')} className="w-10 h-10 rounded-full" />
+                </View>
+                <View className="flex justify-center  ml-2 space-y-1">
+                  <Text className="text-[13px] font-semibold text-gray-500"> Mataam-Al Rahath </Text>
+                  <Text className="text-[13px] font-semibold text-gray-400"> RahathMataam@gmail.com </Text>
+                </View>
               </View>
-              <TextInput
-                placeholder="Search Items"
-                className="placeholder:text-xs"
-                placeholderTextColor="#98A2B3"
-              />
-            </View>
-            <View className='flex flex-row mt-3 items-center bg-white rounded-full mb-1'>
-              <Image source={require('../../assets/images/search-menu.png')} className='h-9 w-9' />
+              <Switch
+                trackColor={{ false: "#767577", true: "#FB814B" }}
+                thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
+                onValueChange={toggleSwitch}
+                value={isEnabled}
+            />
             </View>
           </View>
+      
           {/* 
 body section */}
           <Text className="text-sm font-bold text-gray-500 mt-3 mb-2"> Recent Orders </Text>
@@ -149,39 +153,15 @@ body section */}
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     height: '100%',
     width: '100%',
     borderBottomStartRadius: 0,
     borderBottomEndRadius: 0,
-  },
-  scrollViewContent: {
-    flexGrow: 1,
-    height: '100%',
-    width: '100%',
-  },
-  inputError: {
-    borderColor: 'red',
-    borderWidth: 1,
-    // Adjust the error border color
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContainerSuccess: {
-    flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  closeButton: {
-    position: 'absolute',
-    top: 10,
-    right: 10,
-  },
-})
+},
+  label: {
+      fontSize: 18,
+      marginBottom: 10,
+  }
+});

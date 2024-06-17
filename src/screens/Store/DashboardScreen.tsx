@@ -23,7 +23,6 @@ export default function DashboardScreen({ navigation }) {
     return (
 
         <View className="w-full h-full">
-
             <View className="w-full h-full flex bg-black/7" style={styles.container}  >
                 <View className=" p-5 w-full">
                     <View className="w-full flex flex-col justify-center items-center">
@@ -83,7 +82,7 @@ export default function DashboardScreen({ navigation }) {
                         </View>
                     </View>
                     <Text className="text-sm font-bold text-gray-500 mt-3 mb-2"> Recent Orders </Text>
-                    <ScrollView className="flex flex-col space-y-3 h-full">
+                    <ScrollView className="flex flex-col space-y-3 h-[290px]">
                     <View className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
                         <View className="w-full  justify-between flex flex-row items-center">
                             <View className="flex flex-row m-1 justify-center items-center space-x-4">
@@ -140,8 +139,6 @@ export default function DashboardScreen({ navigation }) {
 
                         </View>
                     </View>
-
-             
                    </ScrollView>
                 </View>
             </View>
