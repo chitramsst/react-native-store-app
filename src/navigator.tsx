@@ -14,13 +14,9 @@ import OrderDetailScreen from './screens/Store/Orders/OrderDetailScreen';
 import OrderAcceptScreen from './screens/Store/Orders/OrderAcceptScreen';
 import OrderCompletedScreen from './screens/Store/Orders/OrderCompletedScreen';
 import OrderPaymentVerificationScreen from './screens/Store/Orders/OrderPaymentVerificationScreen';
-
+import InventoryScreen from './screens/Store/Inventory/InventoryScreen'
 import MoreScreen from './screens/Store/MoreScreen';
-import InventoryScreen from './screens/Store/InventoryScreen';
-import DashboardIcon from './assets/icons/DashboardIcon';
-import MoreIcon from './assets/icons/MoreIcon';
-import HomeIcon from './assets/icons/HomeIcon';
-import InventoryIcon from './assets/icons/InventoryIcon';
+
 
 
 function AuthStack() {
@@ -58,6 +54,17 @@ function HomeStack() {
                     <View className='flex flex-col items-center'>
                         <Image source={require('./assets/images/icons/note.png')} style={{ tintColor: item.color, width: 20, height: 20 }} />
                         <Text className="text-gray-100 text-xs">Orders</Text>
+                    </View>
+            }} />
+            <Tab.Screen name="Inventory" component={InventoryScreen} options={{
+                tabBarIcon: (item) => item.focused ?
+                    <View className='flex flex-col items-center'>
+                        <Image source={require('./assets/images/icons/box.png')} style={{ tintColor: '#FB814B', width: 20, height: 20 }} />
+                        <Text style={{ color: '#FB814B' }} className="text-xs">Inventory</Text>
+                    </View> :
+                    <View className='flex flex-col items-center'>
+                        <Image source={require('./assets/images/icons/box.png')} style={{ tintColor: item.color, width: 20, height: 20 }} />
+                        <Text className="text-gray-100 text-xs">Inventory</Text>
                     </View>
             }} />
             <Tab.Screen name="More" component={MoreScreen} options={{
