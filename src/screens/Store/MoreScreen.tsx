@@ -59,21 +59,21 @@ body section */}
             <Pressable onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
-                  <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
+                  <Text className="text-gray-400 font-semibold text-xs">#12345678</Text>
                   <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
                     <Image source={require('../../assets/images/clock.png')} className="h-3 w-3" />
-                    <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
+                    <Text className="text-xs font-semibold text-gray-400"> 10.30 am </Text>
                   </View>
                 </View>
-                <View className="flex  flex-row justify-start items-center  bg-[#FB814B] rounded-full px-2   m-1  text-white">
-                  <Text className="text-white text-[13px] font-semibold">Pickup</Text>
+                <View className="flex  flex-row justify-start items-center  bg-[#FB814B] rounded-full px-2 py-[2px]   m-1  text-white">
+                  <Text className="text-white text-[10px] font-semibold">Pick up</Text>
                 </View>
               </View>
               <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
                 <View className="mt-2 flex justify-center items-center">
                   <IconMaterial name="person" size={17} color="#9CA3AF" />
                 </View>
-                <Text className="text-sm font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
+                <Text className="text-xs font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
               </View>
 
               {/* preparing */}
@@ -88,9 +88,9 @@ body section */}
                     </View>
                   </View>
                   <View className="flex flex-col  pb-2 space-y-1 px-1">
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
+                    <Text className="text-[12px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[12px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[12px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
                   </View>
                 </View>
 
@@ -105,8 +105,8 @@ body section */}
                 </View>
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
                   <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                  <Image source={require('../../assets/images/dollar.png')} className="h-4 w-4" />
-                
+                    <Image source={require('../../assets/images/dollar.png')} className="h-4 w-4" />
+
                   </View>
                   <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                 </View>
