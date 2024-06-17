@@ -2,159 +2,150 @@ import React, { useState, useEffect } from 'react';
 import { Text, StyleSheet, Button, View, FlatList, ScrollView, TouchableOpacity, Alert, ActivityIndicator, Image, ImageBackground, Pressable, TextInput, Modal, Keyboard } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome6';
+import IconMaterial from 'react-native-vector-icons/MaterialIcons';
+import IconFontisto from 'react-native-vector-icons/Fontisto';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 
+export default function MoreScreen({ navigation }) {
 
-interface TableScreenProps {
-  navigation: any;
-  mainFloorContent: string[];
-  firstFloorContent: string[];
-}
-
-export default function TableListScreen({ navigation }: TableScreenProps) {
-
-  const MainItem = ({ item }) => (
-    <Text className="text-[#6F767E] my-3 mb-5 mt-10 text-md font-semibold">{item}</Text>
-  );
-
-
-  const [modalMenuVisible, setModalMenuVisible] = useState(false);
-
-  const data = [
-    {
-      mainItem: 'Main Floor',
-      subItems: Array.from({ length: 8 }, (_, index) => `GT-0${index + 1}`),
-    },
-    {
-      mainItem: 'First Floor',
-      subItems: Array.from({ length: 8 }, (_, index) => `GTS-0${index + 1}`),
-    },
-    // Add more mainItem-subItem pairs as needed
-  ];
-
-  const handlePress = (item: string) => {
-    navigation.navigate('Items', { selectedItem: item });
+  const getTextLength = (text) => {
+    const textWithoutDollar = text.slice(1);
+    return textWithoutDollar.replace(/\./, "").length;
   };
 
-  const SubItem = ({ item }) => (
-    <View style={{ padding: 10, backgroundColor: 'lightgreen', marginVertical: 5 }}>
-      <Text> {item}</Text>
-    </View>
-  );
+  const text = "$512.64";
+  const textLength = getTextLength(text);
 
-  const handleViewKOT = () => {
-    setModalMenuVisible(false)
-    navigation.navigate('KOTView');
-  };
-
-  const renderItem = ({ item }: { item: string }) => {
-    let content;
-    if (item === 'GT-05') {
-      content = (
-        <Pressable style={styles.pressableItem} onPress={() => setModalMenuVisible(true)} className="m-2  p-2 bg-[#FB814B] border-0.5 h-24 w-[102px] rounded-lg border-black/20" >
-          <Text style={styles.pressableText} className="text-white">{item}</Text>
-          <View className="flex flex-row justify-center items-center mt-3 bg-[#e16d3b] rounded-lg py-[0.5px] mx-3">
-            <Pressable className='w-4 h-4 flex items-center justify-center '>
-              <Icon name="clock" size={10} color="#FFFFFF" />
-            </Pressable>
-            <Text className="text-[10px] text-[#FFFFFF] font-bold">0 min</Text>
-          </View>
-          <View className="flex flex-row justify-center items-center mt-3 bg-[#e16d3b] rounded-lg py-[0.5px] mx-3">
-            <Pressable className='w-4 h-4 flex items-center justify-center '>
-              <Icon name="dollar" size={10} color="#FFFFFF" />
-            </Pressable>
-            <Text className="text-[10px] text-[#FFFFFF] font-bold">4215.26</Text>
-          </View>
-        </Pressable>
-      );
-    } else {
-      content = (
-        <Pressable style={styles.pressableItem} onPress={() => handlePress(item)} className="m-2  p-2 bg-white border-0.5 h-24 w-[102px] rounded-lg border-black/20">
-          <Text style={styles.pressableText}>{item}</Text>
-        </Pressable>
-      );
-    }
-    return (
-      <View>
-        {content}
-      </View>
-    );
+  const handlePress = () => {
+    navigation.navigate('OrderDetail');
   };
 
   return (
 
-
     <View className="w-full h-full">
-
-      {/* Menu Modal */}
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalMenuVisible}
-        onRequestClose={() => {
-          setModalMenuVisible(false);
-        }}
-      >
-        <View style={styles.modalContainer} >
-          <View className="bg-[#fff] p-4 rounded-lg w-64">
-            <View className="flex justify-between flex-row-reverse">
-              <Pressable className="rounded-full text-neutral-700 h-6 w-6 bg-neutral-100 flex justify-center items-center" onPress={() => setModalMenuVisible(false)}>
-                <IconAntDesign name="close" size={10} />
-              </Pressable>
-              <View className="flex flex-col space-x-0 mb-3">
-                <Text className="text-xs font-bold text-neutral-700">Table "GT-05"</Text>
-              </View>
-            </View>
-
-            <View className="h-[0.5px] w-full mx-1 bg-neutral-300 my-3"></View>
-
-            <Pressable onPress={() => handleViewKOT()}>
-              <Text className="text-neutral-700 text-xs text-center">View KOT</Text>
-            </Pressable>
-
-            <View className="h-[0.5px] w-full mx-1 bg-neutral-300 my-3"></View>
-            <Text className="text-neutral-700 text-xs text-center">Move Table</Text>
-
-            <View className="h-[0.5px] w-full mx-1 bg-neutral-300 my-3"></View>
-            <Text className="text-neutral-700 text-xs text-center">Print Bill</Text>
-            <View className="h-[0.5px] w-full mx-1 bg-neutral-300 my-3"></View>
-            <Text className="text-neutral-700 text-xs text-center">Print Bill and Payment</Text>
-            <View className="h-[0.5px] w-full mx-1 bg-neutral-300 my-3"></View>
-            <Text className="text-neutral-700 text-xs text-center">Get Pin</Text>
-            <View className="h-[0.5px] w-full mx-1 bg-neutral-300 my-3"></View>
-          </View>
-        </View>
-      </Modal>
 
       <View className="w-full h-full flex bg-black/7" style={styles.container}  >
         <View className=" p-5 w-full">
           <View className="w-full flex flex-col justify-center items-center">
             <Image source={require('../../assets/images/fyra-logo.png')} />
           </View>
-          <FlatList
-            data={data}
-            renderItem={({ item }) => (
-              <View>
-                <MainItem item={item.mainItem} />
-                <FlatList
-                  data={item.subItems}
-                  renderItem={renderItem}
-                  keyExtractor={(item, index) => index.toString()}
-                  horizontal={false}
-                  numColumns={3}
-                  contentContainerStyle={styles.flatListContainer}
-                />
+
+          {/* search section */}
+
+          <View className='flex flex-row w-full justify-center items-center space-x-1' >
+
+            <View className='flex flex-row mt-3 items-center bg-white rounded-full mb-1 w-11/12 h-10' >
+              <View className='flex items-start pl-3'>
+                <Pressable className='w-6 h-6 rounded-full flex items-center justify-center '>
+                  <IconFontisto name="search" size={14} color="#6F767E" />
+                </Pressable>
               </View>
-            )}
-            keyExtractor={(item, index) => index.toString()}
-            style={styles.container}
-          />
+              <TextInput
+                placeholder="Search Items"
+                className="placeholder:text-xs"
+                placeholderTextColor="#98A2B3"
+              />
+            </View>
+            <View className='flex flex-row mt-3 items-center bg-white rounded-full mb-1'>
+              <Image source={require('../../assets/images/search-menu.png')} className='h-9 w-9' />
+            </View>
+          </View>
+          {/* 
+body section */}
+          <Text className="text-sm font-bold text-gray-500 mt-3 mb-2"> Recent Orders </Text>
+
+          <View className="flex flex-col space-y-2">
+            {/* PICKUP */}
+            <Pressable onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
+              <View className="w-full  justify-between flex flex-row items-center">
+                <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                  <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
+                  <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
+                    <Image source={require('../../assets/images/clock.png')} className="h-3 w-3" />
+                    <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
+                  </View>
+                </View>
+                <View className="flex  flex-row justify-start items-center  bg-[#FB814B] rounded-full px-2   m-1  text-white">
+                  <Text className="text-white text-[13px] font-semibold">Pickup</Text>
+                </View>
+              </View>
+              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
+                <View className="mt-2 flex justify-center items-center">
+                  <IconMaterial name="person" size={17} color="#9CA3AF" />
+                </View>
+                <Text className="text-sm font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
+              </View>
+
+              {/* preparing */}
+              <View className="px-1 py-2" >
+                <View className="w-full bg-gray-100 rounded-lg  flex flex-col mt-1 p-2">
+                  <View className="w-full  justify-between flex flex-row items-center">
+                    <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                      <Text className="text-gray-400 font-bold">Items</Text>
+                    </View>
+                    <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
+                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
+                    </View>
+                  </View>
+                  <View className="flex flex-col  pb-2 space-y-1 px-1">
+                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
+                    <Text className="text-[13px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
+                  </View>
+                </View>
+
+              </View>
+
+              {/* End section */}
+              <View className="w-full  justify-between flex flex-row items-center">
+                <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
+                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
+                    <Icon name="info" size={8} color="#FFFF" />
+                  </View>
+                </View>
+                <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
+                  <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                  <Image source={require('../../assets/images/dollar.png')} className="h-4 w-4" />
+                
+                  </View>
+                  <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
+                </View>
+
+              </View>
+            </Pressable>
+          </View>
+
+
+          <Pressable onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-3 p-1">
+            <View className="w-full  justify-between flex flex-row items-center">
+              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
+                <View className="mt-2 flex justify-center items-center bg-[#FB814B]/50 rounded-full p-1">
+                  <Image source={require('../../assets/images/icons/document.png')} className="h-3 w-3" />
+                </View>
+                <Text className="text-sm font-semibold text-gray-400 mt-1"> Inventory </Text>
+              </View>
+              <Pressable className="rounded-full text-neutral-700 h-6 w-6 flex justify-center items-center" onPress={() => setModalMenuVisible(false)}>
+                <IconAntDesign name="right" size={12} />
+              </Pressable>
+            </View>
+          </Pressable>
+
+          <Pressable onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-3 p-1">
+            <View className="w-full  justify-between flex flex-row items-center">
+              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
+                <View className="mt-2 flex justify-center items-center bg-[#FB814B]/50 rounded-full p-1">
+                  <Image source={require('../../assets/images/icons/filled.png')} className="h-3 w-3" />
+                </View>
+                <Text className="text-sm font-semibold text-gray-400 mt-1"> Logout </Text>
+              </View>
+              <Pressable className="rounded-full text-neutral-700 h-6 w-6 flex justify-center items-center" onPress={() => setModalMenuVisible(false)}>
+                <IconAntDesign name="right" size={12} />
+              </Pressable>
+            </View>
+          </Pressable>
         </View>
       </View>
-      <View className='absolute bottom-10 right-10 bg-[#FB814B] w-10 h-10 rounded-full flex justify-center items-center '>
-        <Icon name="plus" size={14} color="#FCFCFC" />
-      </View>
-    </View>
+    </View >
   );
 }
 

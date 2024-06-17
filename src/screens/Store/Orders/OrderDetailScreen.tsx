@@ -36,7 +36,7 @@ export default function OrderDetailScreen({ navigation }) {
                         </Pressable>
                         <Text className="text-[#6F767E] text-md font-extrabold"> #12345678 </Text>
                         <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                            <Icon name="clock" size={14} color="#FB814B" />
+                        <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
                             <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
                         </View>
                     </View>

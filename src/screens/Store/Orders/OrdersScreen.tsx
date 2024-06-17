@@ -59,7 +59,8 @@ body section */}
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
                   <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
                   <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
+                  <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
+               
                     <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
                   </View>
                 </View>
@@ -97,13 +98,13 @@ body section */}
               {/* End section */}
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
+                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
+                    <Icon name="info" size={8} color="#FFFF" />
                   </View>
                 </View>
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                  <Image source={require('../../../assets/images/dollar.png')} className="h-4 w-4" />
                   </View>
                   <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                 </View>
@@ -118,7 +119,8 @@ body section */}
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
                   <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
                   <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
+                  <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
+               
                     <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
                   </View>
                 </View>
@@ -155,13 +157,13 @@ body section */}
               {/* End section */}
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
+                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
+                    <Icon name="info" size={8} color="#FFFF" />
                   </View>
                 </View>
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                  <Image source={require('../../../assets/images/dollar.png')} className="h-4 w-4" />
                   </View>
                   <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                 </View>
@@ -175,7 +177,8 @@ body section */}
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
                   <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
                   <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
+                  <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
+               
                     <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
                   </View>
                 </View>
@@ -213,13 +216,13 @@ body section */}
               {/* End section */}
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
+                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
+                    <Icon name="info" size={8} color="#FFFF" />
                   </View>
                 </View>
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                  <Image source={require('../../../assets/images/dollar.png')} className="h-4 w-4" />
                   </View>
                   <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                 </View>
@@ -234,7 +237,8 @@ body section */}
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
                   <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
                   <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
+                  <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
+               
                     <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
                   </View>
                 </View>
@@ -272,13 +276,13 @@ body section */}
               {/* End section */}
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
+                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
+                    <Icon name="info" size={8} color="#FFFF" />
                   </View>
                 </View>
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                  <Image source={require('../../../assets/images/dollar.png')} className="h-4 w-4" />
                   </View>
                   <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                 </View>
@@ -292,7 +296,8 @@ body section */}
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
                   <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
                   <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
+                  <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
+               
                     <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
                   </View>
                 </View>
@@ -330,13 +335,13 @@ body section */}
               {/* End section */}
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
+                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
+                    <Icon name="info" size={8} color="#FFFF" />
                   </View>
                 </View>
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                  <Image source={require('../../../assets/images/dollar.png')} className="h-4 w-4" />
                   </View>
                   <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                 </View>
@@ -351,7 +356,7 @@ body section */}
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
                   <Text className="text-gray-400 font-semibold text-[13px]">#12345678</Text>
                   <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Icon name="clock" size={14} color="#FB814B" />
+                  <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
                     <Text className="text-[13px] font-semibold text-gray-400"> 10.30 am </Text>
                   </View>
                 </View>
@@ -389,13 +394,13 @@ body section */}
               {/* End section */}
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="info" size={11} color="#FFFF" />
+                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
+                    <Icon name="info" size={8} color="#FFFF" />
                   </View>
                 </View>
                 <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="bg-[#FB814B] rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Icon name="dollar" size={14} color="#FFFF" solid />
+                  <View className=" rounded-full p-1 h-5 w-5 flex justify-center items-center">
+                  <Image source={require('../../../assets/images/dollar.png')} className="h-4 w-4" />
                   </View>
                   <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
                 </View>
