@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, Button, View, FlatList, ScrollView, TouchableOpacity, Alert, ActivityIndicator, Image, ImageBackground, Pressable, TextInput, Modal, Keyboard } from 'react-native';
+import { Text, StyleSheet, Switch, Button, View, FlatList, ScrollView, TouchableOpacity, Alert, ActivityIndicator, Image, ImageBackground, Pressable, TextInput, Modal, Keyboard } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
@@ -7,6 +7,10 @@ import IconFontisto from 'react-native-vector-icons/Fontisto';
 
 
 export default function OrdersScreen({ navigation }) {
+
+  const [isEnabled, setIsEnabled] = useState(true);
+
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   const getTextLength = (text) => {
     const textWithoutDollar = text.slice(1);
@@ -20,6 +24,40 @@ export default function OrdersScreen({ navigation }) {
     navigation.navigate('OrderDetail');
   };
 
+
+  const renderItem = ({ item }: { item: string }) => {
+    let content;
+    if (item === 'GT-05') {
+      content = (
+        <Pressable style={styles.pressableItem} onPress={() => setModalMenuVisible(true)} className="m-2  p-2 bg-[#FB814B] border-0.5 h-24 w-[102px] rounded-lg border-black/20" >
+          <Text style={styles.pressableText} className="text-white">{item}</Text>
+          <View className="flex flex-row justify-center items-center mt-3 bg-[#e16d3b] rounded-lg py-[0.5px] mx-3">
+            <Pressable className='w-4 h-4 flex items-center justify-center '>
+              <Icon name="clock" size={10} color="#FFFFFF" />
+            </Pressable>
+            <Text className="text-[10px] text-[#FFFFFF] font-bold">0 min</Text>
+          </View>
+          <View className="flex flex-row justify-center items-center mt-3 bg-[#e16d3b] rounded-lg py-[0.5px] mx-3">
+            <Pressable className='w-4 h-4 flex items-center justify-center '>
+              <Icon name="dollar" size={10} color="#FFFFFF" />
+            </Pressable>
+            <Text className="text-[10px] text-[#FFFFFF] font-bold">4215.26</Text>
+          </View>
+        </Pressable>
+      );
+    } else {
+      content = (
+        <Pressable style={styles.pressableItem} onPress={() => handlePress(item)} className="m-2  p-2 bg-white border-0.5 h-24 w-[102px] rounded-lg border-black/20">
+          <Text style={styles.pressableText}>{item}</Text>
+        </Pressable>
+      );
+    }
+    return (
+      <View>
+        {content}
+      </View>
+    );
+  };
   return (
 
     <View className="w-full h-full">
@@ -50,67 +88,66 @@ export default function OrdersScreen({ navigation }) {
               <Image source={require('../../../assets/images/search-menu.png')} className='h-9 w-9' />
             </View>
           </View>
-          {/* 
-body section */}
-          <ScrollView className="flex flex-col space-y-2">
-            {/* PICKUP */}
-            <Pressable onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
-              <View className="w-full  justify-between flex flex-row items-center">
-                <View className="flex flex-row m-1 justify-center items-center space-x-4">
-                  <Text className="text-gray-400 font-semibold text-xs">#12345678</Text>
-                  <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full px-2">
-                    <Image source={require('../../../assets/images/clock.png')} className="h-3 w-3" />
-                    <Text className="text-xs font-semibold text-gray-400"> 10.30 am </Text>
+
+          <View className="w-full flex justify-center items-center flex-row space-x-2 mt-2">
+
+            {/* TOTAL ORDERS */}
+            <View className="w-1/2 bg-white max-h-32 min-h-32 rounded-lg flex flex-row justify-center items-center mt-3">
+              <View className="w-full h-full flex justify-center p-2">
+                <View className="justify-between flex flex-row items-center">
+                  <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                    <Text className="text-gray-400 font-semibold text-xs">PIZ001</Text>
+                  </View>
+                  <View className="flex  flex-row justify-start items-center px-2 py-[2px]   m-1  text-white">
+                    <Switch
+                      trackColor={{ false: "#767577", true: "#3FDD78" }}
+                      thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
+                      onValueChange={toggleSwitch}
+                      value={isEnabled}
+                    />
                   </View>
                 </View>
-                <View className="flex  flex-row justify-start items-center  bg-[#FB814B] rounded-full px-2 py-[2px]   m-1  text-white">
-                  <Text className="text-white text-[10px] font-semibold">Pick up</Text>
+                <View className="flex flex-row justify-start items-center  pb-1 space-x-1 px-1">
+                  <Text className="text-xs font-semibold text-gray-400 mt-1"> Margherita Pizza </Text>
+                </View>
+                <View className="flex flex-row justify-end items-center  pb-1 space-x-1 px-1">
+                  <Text className="text-xs font-semibold text-gray-400 mt-1"> $61.00 </Text>
+                </View>
+                <View className="absolute bottom-0 w-full rounded-t-lg flex justify-center items-center">
+                  <View className="border-[3px] bottom-0 border-[#3FDD78] rounded-t-lg w-[50%]"></View>
                 </View>
               </View>
-              <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
-                <View className="mt-2 flex justify-center items-center">
-                  <IconMaterial name="person" size={17} color="#9CA3AF" />
+            </View>
+            <View className="w-1/2 bg-white max-h-32 min-h-32 rounded-lg flex flex-row justify-center items-center mt-3">
+              <View className="w-full h-full flex justify-center p-2">
+                <View className="justify-between flex flex-row items-center">
+                  <View className="flex flex-row m-1 justify-center items-center space-x-4">
+                    <Text className="text-gray-400 font-semibold text-xs">PIZ001</Text>
+                  </View>
+                  <View className="flex  flex-row justify-start items-center px-2 py-[2px]   m-1  text-white">
+                    <Switch
+                      trackColor={{ false: "#767577", true: "#3FDD78" }}
+                      thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
+                      onValueChange={toggleSwitch}
+                      value={isEnabled}
+                    />
+                  </View>
                 </View>
-                <Text className="text-xs font-semibold text-gray-400 mt-1"> Akhila_aji_21 </Text>
+                <View className="flex flex-row justify-start items-center  pb-1 space-x-1 px-1">
+                  <Text className="text-xs font-semibold text-gray-400 mt-1"> Margherita Pizza </Text>
+                </View>
+                <View className="flex flex-row justify-end items-center  pb-1 space-x-1 px-1">
+                  <Text className="text-xs font-semibold text-gray-400 mt-1"> $61.00 </Text>
+                </View>
+                <View className="absolute bottom-0 w-full rounded-t-lg flex justify-center items-center">
+                  <View className="border-[3px] bottom-0 border-[#3FDD78] rounded-t-lg w-[50%]"></View>
+                </View>
               </View>
+            </View>
+          </View>
 
-              {/* preparing */}
-              <View className="px-1 py-2" >
-                <View className="w-full bg-gray-100 rounded-lg  flex flex-col mt-1 p-2">
-                  <View className="w-full  justify-between flex flex-row items-center">
-                    <View className="flex flex-row m-1 justify-center items-center space-x-4">
-                      <Text className="text-gray-400 font-bold">Items</Text>
-                    </View>
-                    <View className="flex  flex-row justify-start items-center  px-2   m-1  text-white">
-                      <Text className="text-[#FB814B] text-xs   font-bold italic">Preparing...</Text>
-                    </View>
-                  </View>
-                  <View className="flex flex-col  pb-2 space-y-1 px-1">
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-gray-500"> 6 x  <Text className="text-[#141718]">chicken alferdo </Text></Text>
-                    <Text className="text-[13px]  text-[#6F767E]"> 5 x  <Text className="text-[#141718]">Pepperoni Pizza <Text className="text-[#6F767E]">(Half ∙ Mushroom, Olives) </Text></Text></Text>
-                  </View>
-                </View>
-
-              </View>
-
-              {/* End section */}
-              <View className="w-full  justify-between flex flex-row items-center">
-                <View className="flex flex-row m-1 justify-center items-center bg-gray-200 rounded-full p-1">
-                  <View className="bg-gray-500 rounded-full p-1 h-4 w-4 flex justify-center items-center">
-                    <Icon name="info" size={8} color="#FFFF" />
-                  </View>
-                </View>
-                <View className="flex flex-row m-1 justify-center items-center bg-gray-100 rounded-full px-2">
-                  <View className="rounded-full p-1 h-5 w-5 flex justify-center items-center">
-                    <Image source={require('../../../assets/images/dollar.png')} className="h-4 w-4" />
-                  </View>
-                  <Text className="text-[13px] font-semibold text-gray-400 "> 4512.56 </Text>
-                </View>
-
-              </View>
-            </Pressable>
-          </ScrollView>
+          {/*  body section */}
+        
         </View>
       </View>
       <View className='absolute bottom-10 right-10 bg-[#FB814B] w-10 h-10 rounded-full flex justify-center items-center '>
