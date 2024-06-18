@@ -132,7 +132,7 @@ const [checkboxes, setCheckboxes] = useState([
               <Image source={require('../../../assets/images/search-menu.png')} className='h-9 w-9' />
             </Pressable>
             {menuVisible && (
-              <View style={styles.dropdownMenu} className="w-64">
+              <View style={styles.dropdownMenu} className="w-">
                 {/* Add your dropdown menu items here */}
                 <Pressable onPress={() => console.log('Option 1 selected')}>
                   <View style={styles.menuItem}>
