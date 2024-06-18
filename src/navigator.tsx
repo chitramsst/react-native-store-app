@@ -90,7 +90,7 @@ function HomeStack() {
 
 function Navigator(): React.JSX.Element {
     const navigationRef = useNavigationContainerRef();
-    let isLoggedIn = false;
+    let isLoggedIn = true;
     return (
         <NavigationContainer ref={navigationRef} >
             <StatusBar barStyle={'dark-content'} backgroundColor={'#FFFFFF'} />
