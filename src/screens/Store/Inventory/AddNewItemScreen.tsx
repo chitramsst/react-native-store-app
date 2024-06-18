@@ -136,7 +136,7 @@ export default function OrdersScreen({ navigation }) {
                         <View className="w-full flex justify-center p-2">
                             <Text className="text-gray-600 font-semibold text-xs">Notes</Text>
                             <View className="justify-between flex flex-row items-center">
-                                <View className="flex flex-row m-1 justify-start items-center space-x-4 w-full rounded-lg bg-gray-100">
+                                <View className="flex flex-row justify-start items-center space-x-4 w-full rounded-lg bg-gray-100">
                                     <TextInput className="h-32 text-left px-2  py-5 text-xs  text-neutral-700" placeholderTextColor="#aaa" multiline={true}
                                         numberOfLines={4}
                                         placeholder="Enter Note" style={styles.input}></TextInput>
