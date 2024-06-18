@@ -23,7 +23,7 @@ export default function MoreScreen({ navigation }) {
   const textLength = getTextLength(text);
 
   const handlePress = () => {
-    navigation.navigate('OrderDetail');
+    navigation.navigate('Inventory');
   };
 
   return (
@@ -60,7 +60,7 @@ body section */}
 
           <View className="flex flex-col space-y-2">
             {/* PICKUP */}
-            <Pressable onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
+            <Pressable className="w-full bg-white rounded-lg flex flex-col mt-1 p-2">
               <View className="w-full  justify-between flex flex-row items-center">
                 <View className="flex flex-row m-1 justify-center items-center space-x-4">
                   <Text className="text-gray-400 font-semibold text-xs">#12345678</Text>
@@ -134,7 +134,7 @@ body section */}
             </View>
           </Pressable>
 
-          <Pressable onPress={() => handlePress()} className="w-full bg-white rounded-lg flex flex-col mt-3 p-1">
+          <Pressable className="w-full bg-white rounded-lg flex flex-col mt-3 p-1">
             <View className="w-full  justify-between flex flex-row items-center">
               <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
                 <View className="mt-2 flex justify-center items-center bg-[#FB814B]/50 rounded-full p-1">

@@ -16,7 +16,8 @@ import OrderCompletedScreen from './screens/Store/Orders/OrderCompletedScreen';
 import OrderPaymentVerificationScreen from './screens/Store/Orders/OrderPaymentVerificationScreen';
 import InventoryScreen from './screens/Store/Inventory/InventoryScreen'
 import MoreScreen from './screens/Store/MoreScreen';
-
+import CategoryManagementScreen from './screens/Store/Inventory/CategoryManagementScreen'
+import AddNewItemScreen from './screens/Store/Inventory/AddNewItemScreen'
 
 
 function AuthStack() {
@@ -101,7 +102,8 @@ function Navigator(): React.JSX.Element {
                         <Stack.Screen name="OrderAccept" component={OrderAcceptScreen} options={{ headerShown: false }} />
                         <Stack.Screen name="OrderPaymentVerification" component={OrderPaymentVerificationScreen} options={{ headerShown: false }} />
                         <Stack.Screen name="OrderCompleted" component={OrderCompletedScreen} options={{ headerShown: false }} />
-
+                        <Stack.Screen name="CategoryManagement" component={CategoryManagementScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="AddNewItem" component={AddNewItemScreen} options={{ headerShown: false }} />
                     </Stack.Navigator>
                 </>
             )

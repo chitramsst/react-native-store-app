@@ -17,18 +17,11 @@ export default function OrdersScreen({ navigation }) {
     return textWithoutDollar.replace(/\./, "").length;
   };
 
-  
   const text = "$512.64";
   const textLength = getTextLength(text);
 
-
   const handlePress = () => {
     navigation.navigate('Dashboard');
-  };
-
-
-  const handlePressNewItem = () => {
-    navigation.navigate('AddNewItem');
   };
 
   const data = [
@@ -117,9 +110,9 @@ export default function OrdersScreen({ navigation }) {
           />
         </View>
       </View>
-      <Pressable onPress={() => handlePressNewItem()} className='absolute bottom-2 right-5 bg-[#FB814B] w-10 h-10 rounded-full flex justify-center items-center '>
+      <View className='absolute bottom-2 right-5 bg-[#FB814B] w-10 h-10 rounded-full flex justify-center items-center '>
         <Icon name="plus" size={14} color="#FCFCFC" />
-      </Pressable>
+      </View>
 
     </View >
   );
