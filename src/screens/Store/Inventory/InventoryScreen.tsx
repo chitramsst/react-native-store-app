@@ -21,7 +21,7 @@ export default function OrdersScreen({ navigation }) {
   const textLength = getTextLength(text);
 
   const handlePress = () => {
-    navigation.navigate('OrderDetail');
+    navigation.navigate('Dashboard');
   };
 
   const data = [
@@ -33,12 +33,11 @@ export default function OrdersScreen({ navigation }) {
     { id: 6, title: 'Item 6' }, // Add more items if needed for 5 rows
     { id: 7, title: 'Item 3' },
     { id: 8, title: 'Item 4' },
-    { id: 9, title: 'Item 5' },
-    { id: 10, title: 'Item 6' },
+   
   ];
 
   const renderItem = ({ item }) => (
-    <View className="w-[48%] m-1 bg-white max-h-32 min-h-32 rounded-lg flex flex-row justify-center items-center mt-3">
+    <View className="w-[48%] mr-1 bg-white max-h-32 min-h-32 rounded-lg flex flex-row justify-center items-center mt-3">
       <View className="w-full h-full flex justify-center p-2">
         <View className="justify-between flex flex-row items-center">
           <View className="flex flex-row m-1 justify-center items-center space-x-4">
@@ -73,8 +72,13 @@ export default function OrdersScreen({ navigation }) {
 
       <View className="w-full h-full flex bg-black/7" style={styles.container}  >
         <View className=" p-5 w-full">
+          <View className="flex flex-row justify-center items-center">
+        <Pressable className='w-6 h-6 rounded-full flex items-center justify-center ' onPress={() => handlePress()}>
+                            <Icon name="arrow-left" size={14} color="#6F767E" />
+                        </Pressable>
           <View className="w-full flex flex-col justify-center items-center py-3">
             <Text className="text-md font-black text-black"> Inventory </Text>
+          </View>
           </View>
           {/* search section */}
           <View className='flex flex-row w-full justify-center items-center space-x-1' >
@@ -102,7 +106,7 @@ export default function OrdersScreen({ navigation }) {
             horizontal = {false}
             numColumns={2} // Set number of columns to 2
             keyExtractor={item => item.id} // Extract unique key for each item
-              className="w-full p-1 mx-3 h-[80%]"
+              className="w-full p-1  h-[80%]"
           />
         </View>
       </View>
