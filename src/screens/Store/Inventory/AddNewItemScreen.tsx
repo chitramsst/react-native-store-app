@@ -4,11 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import IconFontisto from 'react-native-vector-icons/Fontisto';
-
+import { Picker } from '@react-native-picker/picker';
 
 export default function OrdersScreen({ navigation }) {
 
     const [isEnabled, setIsEnabled] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState();
 
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
@@ -23,6 +24,8 @@ export default function OrdersScreen({ navigation }) {
     const handlePress = () => {
         navigation.navigate('Dashboard');
     };
+
+
 
     const data = [
         { id: 1, title: 'Item 1' },
@@ -126,9 +129,36 @@ export default function OrdersScreen({ navigation }) {
                         <View className="w-full flex justify-center p-2">
                             <Text className="text-gray-600 font-semibold text-xs">Category</Text>
                             <View className="justify-between flex flex-row items-center">
-                                <View className="flex flex-row m-1 justify-start items-center space-x-4 w-[70%]">
-                                    <TextInput className="text-left px-2 text-xs  text-neutral-700 bg-gray-100 rounded-lg w-full  h-8" placeholderTextColor="#aaa"
-                                        placeholder="Enter Food Name" style={styles.input}></TextInput>
+                                <View className="flex flex-row  justify-start items-center space-x-4 w-full">
+                                    <View className="w-full bg-gray-100 h-10 rounded-lg">
+                                        <Picker
+                                            selectedValue={selectedCategory}
+                                            onValueChange={(itemValue, itemIndex) =>
+                                                setSelectedCategory(itemValue)
+                                            }>
+                                            <Picker.Item label="Choose Category" value=""/>
+                                            <Picker.Item label="item1" value="java" />
+                                            <Picker.Item label="item2" value="js" />
+                                        </Picker>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+
+                        <View className="w-full flex justify-center p-2">
+                            <Text className="text-gray-600 font-semibold text-xs">Dietary Preferences</Text>
+                            <View className="justify-between flex flex-row items-center">
+                                <View className="flex flex-row  justify-start items-center space-x-4 w-full">
+                                    <View className="w-full bg-gray-100 h-10 rounded-lg">
+                                        <Picker
+                                            selectedValue={selectedCategory}
+                                            onValueChange={(itemValue, itemIndex) =>
+                                                setSelectedCategory(itemValue)
+                                            }>
+                                            <Picker.Item label="Vegetarian" value="1" />
+                                            <Picker.Item label="Non Vengetarian" value="2" />
+                                        </Picker>
+                                    </View>
                                 </View>
                             </View>
                         </View>
@@ -139,7 +169,7 @@ export default function OrdersScreen({ navigation }) {
                                 <View className="flex flex-row justify-start items-center space-x-4 w-full rounded-lg bg-gray-100">
                                     <TextInput className="h-32 text-left px-2  py-5 text-xs  text-neutral-700" placeholderTextColor="#aaa" multiline={true}
                                         numberOfLines={4}
-                                        placeholder="Enter Note" style={styles.input}></TextInput>
+                                        placeholder="Additioal Details" style={styles.input}></TextInput>
                                 </View>
                             </View>
                         </View>

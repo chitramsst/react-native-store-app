@@ -44,7 +44,7 @@ export default function OrdersScreen({ navigation }) {
   ];
 
   const renderItem = ({ item }) => (
-    <View className="w-[48%] mr-1 bg-white max-h-32 min-h-32 rounded-lg flex flex-row justify-center items-center mt-3">
+    <View className="w-[48%] mr-3 bg-white max-h-32 min-h-32 rounded-lg flex flex-row justify-center items-center mt-3">
       <View className="w-full h-full flex justify-center p-2">
         <View className="justify-between flex flex-row items-center">
           <View className="flex flex-row m-1 justify-center items-center space-x-4">
