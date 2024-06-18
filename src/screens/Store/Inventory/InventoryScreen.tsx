@@ -31,7 +31,10 @@ export default function OrdersScreen({ navigation }) {
     { id: 4, title: 'Item 4' },
     { id: 5, title: 'Item 5' },
     { id: 6, title: 'Item 6' }, // Add more items if needed for 5 rows
-
+    { id: 7, title: 'Item 3' },
+    { id: 8, title: 'Item 4' },
+    { id: 9, title: 'Item 5' },
+    { id: 10, title: 'Item 6' },
   ];
 
   const renderItem = ({ item }) => (
@@ -99,10 +102,11 @@ export default function OrdersScreen({ navigation }) {
             horizontal = {false}
             numColumns={2} // Set number of columns to 2
             keyExtractor={item => item.id} // Extract unique key for each item
+              className="w-full p-1 mx-3 h-[80%]"
           />
         </View>
       </View>
-      <View className='absolute bottom-10 right-10 bg-[#FB814B] w-10 h-10 rounded-full flex justify-center items-center '>
+      <View className='absolute bottom-2 right-5 bg-[#FB814B] w-10 h-10 rounded-full flex justify-center items-center '>
         <Icon name="plus" size={14} color="#FCFCFC" />
       </View>
 
