@@ -126,9 +126,9 @@ export default function OrdersScreen({ navigation }) {
                             </View>
                         </View>
 
-                        <View className="w-full flex justify-center p-2">
+                        <View className="w-full flex justify-center p-2 mt-2">
                             <Text className="text-gray-600 font-semibold text-xs">Category</Text>
-                            <View className="justify-between flex flex-row items-center">
+                            <View className="justify-between flex flex-row items-center mt-2">
                                 <View className="flex flex-row  justify-start items-center space-x-4 w-full">
                                     <View className="w-full bg-gray-100 h-10 rounded-lg">
                                         <Picker
@@ -145,16 +145,18 @@ export default function OrdersScreen({ navigation }) {
                             </View>
                         </View>
 
-                        <View className="w-full flex justify-center p-2">
+                        <View className="w-full flex justify-center p-2 mt-2">
                             <Text className="text-gray-600 font-semibold text-xs">Dietary Preferences</Text>
-                            <View className="justify-between flex flex-row items-center">
+                            <View className="justify-between flex flex-row items-center mt-2">
                                 <View className="flex flex-row  justify-start items-center space-x-4 w-full">
                                     <View className="w-full bg-gray-100 h-10 rounded-lg">
                                         <Picker
                                             selectedValue={selectedCategory}
                                             onValueChange={(itemValue, itemIndex) =>
                                                 setSelectedCategory(itemValue)
-                                            }>
+                                            }
+                                            itemStyle={styles.pickerItem}
+                                            >
                                             <Picker.Item label="Vegetarian" value="1" />
                                             <Picker.Item label="Non Vengetarian" value="2" />
                                         </Picker>
@@ -217,5 +219,9 @@ const styles = StyleSheet.create({
     },
     input: {
         textAlignVertical: 'top',
+    },
+    pickerItem: {
+        fontSize: 5, // Customize the font size
+        // You can add more styles here if needed
     },
 })
