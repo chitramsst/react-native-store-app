@@ -61,25 +61,6 @@ export default function OrdersScreen({ navigation }) {
 
                     </View>
 
-                    {/* search section */}
-                    <View className='flex flex-row w-full justify-center items-center space-x-1 pl-2 pr-2' >
-
-                        <View className='flex flex-row mt-3 items-center bg-white rounded-full mb-1 w-11/12 h-10' >
-                            <View className='flex items-start pl-3'>
-                                <Pressable className='w-6 h-6 rounded-full flex items-center justify-center '>
-                                    <IconFontisto name="search" size={14} color="#6F767E" />
-                                </Pressable>
-                            </View>
-                            <TextInput
-                                placeholder="Search Items"
-                                className="placeholder:text-xs"
-                                placeholderTextColor="#98A2B3"
-                            />
-                        </View>
-                        <View className='flex flex-row mt-3 items-center bg-white rounded-full mb-1'>
-                            <Image source={require('../../../assets/images/search-menu.png')} className='h-9 w-9' />
-                        </View>
-                    </View>
                     {/*  body section */}
 
 
