@@ -18,7 +18,7 @@ export default function LoginScreen({ navigation }: HomeScreenProps) {
   const [errorPassword, setErrorPassword] = useState(false);
 
   const handlePress = () => {
-    navigation.navigate('');
+    navigation.navigate('HomeStack');
   };
 
   return (
@@ -31,7 +31,7 @@ export default function LoginScreen({ navigation }: HomeScreenProps) {
             <View className="border-[#EAECF0] border-t" />
                 <View className="flex flex-row mt-1 bg-[#F9FAFB] px-3 py-2 rounded-lg items-center" style={[errorUsername && styles.inputError]}>
                   <TextInput value={username}
-                    onChangeText={(text) => { setUsername(text); setErrorUsername(false) }} className="p-0 w-full pl-3 " placeholder='Your email' placeholderTextColor={'#98A6B3'} />
+                    onChangeText={(text) => { setUsername(text); setErrorUsername(false) }} className="p-0 w-full pl-3 text-neutral-700 " placeholder='Your email' placeholderTextColor={'#98A6B3'} />
                 </View>
                 <View>
                   <Text className='text-red-500' >{errorUsername}</Text>
@@ -39,7 +39,7 @@ export default function LoginScreen({ navigation }: HomeScreenProps) {
                 <View className="flex flex-row bg-[#F9FAFB] px-3 py-2 rounded-lg items-center" style={[errorPassword && styles.inputError]}>
                   <TextInput secureTextEntry
                     value={password}
-                    onChangeText={(text) => { setPassword(text);; setErrorPassword(false) }} className="p-0 w-full pl-3" placeholder='Password' placeholderTextColor={'#98A2B3'} />
+                    onChangeText={(text) => { setPassword(text);; setErrorPassword(false) }} className="p-0 w-full pl-3 text-neutral-700" placeholder='Password' placeholderTextColor={'#98A2B3'} />
                 </View>
                 <Pressable className='mt-4 flex justify-center w-full flex-row'  onPress={() => handlePress()}>
                   <View className='bg-[#FFBC99] py-3 w-full rounded-lg'><Text className='text-white text-center font-bold text-sm'>Login</Text></View>

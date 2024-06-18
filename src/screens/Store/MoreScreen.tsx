@@ -26,6 +26,10 @@ export default function MoreScreen({ navigation }) {
     navigation.navigate('Inventory');
   };
 
+  const handlePressLogout = () => {
+    navigation.navigate('AuthStack');
+  };
+
   return (
 
     <View className="w-full h-full">
@@ -134,7 +138,7 @@ body section */}
             </View>
           </Pressable>
 
-          <Pressable className="w-full bg-white rounded-lg flex flex-col mt-3 p-1">
+          <Pressable className="w-full bg-white rounded-lg flex flex-col mt-3 p-1"  onPress={() => handlePressLogout()} >
             <View className="w-full  justify-between flex flex-row items-center">
               <View className="flex flex-row justify-start items-center  pb-2 space-x-1 px-1">
                 <View className="mt-2 flex justify-center items-center bg-[#FB814B]/50 rounded-full p-1">

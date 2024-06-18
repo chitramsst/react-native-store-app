@@ -91,7 +91,7 @@ export default function OrdersScreen({ navigation }) {
               </View>
               <TextInput
                 placeholder="Search Items"
-                className="placeholder:text-xs"
+                className="placeholder:text-xs text-neutral-700"
                 placeholderTextColor="#98A2B3"
               />
             </View>

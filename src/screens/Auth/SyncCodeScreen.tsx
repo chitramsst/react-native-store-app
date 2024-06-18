@@ -29,7 +29,7 @@ export default function LoginScreen({ navigation }: HomeScreenProps) {
             <View className="border-[#EAECF0] border-t" />
                 <View className="flex flex-row mt-1 bg-[#F9FAFB] px-3 py-2 rounded-lg items-center" style={[errorSyncCode && styles.inputError]}>
                   <TextInput value={syncCoe}
-                    onChangeText={(text) => { setSyncCode(text); setErrorSyncCode(false) }} className="p-0 w-full pl-3 " placeholder='Enter Restaurant Code' placeholderTextColor={'#98A6B3'} />
+                    onChangeText={(text) => { setSyncCode(text); setErrorSyncCode(false) }} className="text-neutral-700 p-0 w-full pl-3 " placeholder='Enter Restaurant Code' placeholderTextColor={'#98A6B3'} />
                 </View>
                 <View>
                   <Text className='text-red-500' >{errorSyncCode}</Text>

@@ -22,7 +22,7 @@ export default function OrdersScreen({ navigation }) {
     const textLength = getTextLength(text);
 
     const handlePress = () => {
-        navigation.navigate('Dashboard');
+        navigation.navigate('Inventory');
     };
 
 
@@ -111,7 +111,7 @@ export default function OrdersScreen({ navigation }) {
                             <Text className="text-gray-600 font-semibold text-xs">Category</Text>
                             <View className="justify-between flex flex-row items-center mt-2">
                                 <View className="flex flex-row  justify-start items-center space-x-4 w-full">
-                                    <View className="w-full bg-gray-100 h-10 rounded-lg">
+                                    <View className="w-full bg-gray-100 h-10 rounded-lg text-neutral-700">
                                         <Picker
                                             selectedValue={selectedCategory}
                                             onValueChange={(itemValue, itemIndex) =>
@@ -130,7 +130,7 @@ export default function OrdersScreen({ navigation }) {
                             <Text className="text-gray-600 font-semibold text-xs">Dietary Preferences</Text>
                             <View className="justify-between flex flex-row items-center mt-2">
                                 <View className="flex flex-row  justify-start items-center space-x-4 w-full">
-                                    <View className="w-full bg-gray-100 h-10 rounded-lg">
+                                    <View className="w-full bg-gray-100 h-10 rounded-lg text-neutral-700">
                                         <Picker
                                             selectedValue={selectedCategory}
                                             onValueChange={(itemValue, itemIndex) =>
@@ -201,7 +201,13 @@ const styles = StyleSheet.create({
     input: {
         textAlignVertical: 'top',
     },
-    pickerItem: {
+    Picker: {
+        color: '#000000',
+        fontSize: 5, // Customize the font size
+        // You can add more styles here if needed
+    },
+    PickerItem: {
+        color: '#000000',
         fontSize: 5, // Customize the font size
         // You can add more styles here if needed
     },

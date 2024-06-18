@@ -90,7 +90,7 @@ function HomeStack() {
 
 function Navigator(): React.JSX.Element {
     const navigationRef = useNavigationContainerRef();
-    let isLoggedIn = true;
+    let isLoggedIn = false;
     return (
         <NavigationContainer ref={navigationRef} >
             <StatusBar barStyle={'dark-content'} backgroundColor={'#FFFFFF'} />
@@ -111,6 +111,14 @@ function Navigator(): React.JSX.Element {
                     <>
                         <Stack.Navigator initialRouteName={"AuthStack"} screenOptions={{ gestureResponseDistance: 20, gestureDirection: 'horizontal', headerShown: false }}>
                             <Stack.Screen name="AuthStack" component={AuthStack} />
+                            <Stack.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }} />
+                        <Stack.Screen name="OrderDetail" component={OrderDetailScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="OrderAccept" component={OrderAcceptScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="OrderPaymentVerification" component={OrderPaymentVerificationScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="OrderCompleted" component={OrderCompletedScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="CategoryManagement" component={CategoryManagementScreen} options={{ headerShown: false }} />
+                        <Stack.Screen name="AddNewItem" component={AddNewItemScreen} options={{ headerShown: false }} />
+                   
                         </Stack.Navigator>
                     </>
                 )

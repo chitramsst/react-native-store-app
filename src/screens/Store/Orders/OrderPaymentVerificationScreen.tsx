@@ -57,8 +57,8 @@ export default function OrderDetailScreen({ navigation }) {
                         <Text className="text-xs font-bold mb-3 text-gray-400 w-full text-center">Please verify and complete the payment.</Text>
                         <View className="h-[0.5px] w-full mx-1 bg-neutral-300 my-3"></View>
                         <View className="flex justify-end items-center flex-row space-x-5">
-                            <Pressable className="rounded-lg border border-neutral-300 px-3 py-1 inset-0" onPress={() => setModalVisible(false)}>
-                                <Text className="text-[10px] font-bold"> Cancel </Text>
+                            <Pressable className="rounded-lg border border-neutral-300 px-3 py-1 inset-0 text-neutral-700" onPress={() => setModalVisible(false)}>
+                                <Text className="text-[10px] font-bold text-neutral-700"> Cancel </Text>
                             </Pressable>
                             <Pressable className="rounded-lg bg-[#FB814B] text-[#FCFCFC] px-3 py-1" onPress={() => handlePress()}>
                                 <Text className="text-[10px] text-white font-bold"> Verify </Text>
