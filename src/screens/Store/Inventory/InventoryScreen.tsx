@@ -58,6 +58,7 @@ const [checkboxes, setCheckboxes] = useState([
   };
 
   const handleCategory = () => {
+    setMenuVisible(false)
     navigation.navigate('CategoryManagement')
   }
 
