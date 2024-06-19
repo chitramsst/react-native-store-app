@@ -37,10 +37,10 @@ export default function OrdersScreen({ navigation }) {
 );
 
 const [checkboxes, setCheckboxes] = useState([
-  { label: 'Pepperoni', checked: false },
-  { label: 'Mushrooms', checked: true },
-  { label: 'Onions', checked: false },
-  { label: 'Bell peppers', checked: false },
+  { label: 'All Items', checked: true },
+  { label: 'Desserts', checked: false },
+  { label: 'Main Courses', checked: true },
+  { label: 'Out of Stock', checked: false },
 ]);
   const handlePress = () => {
     navigation.navigate('Dashboard');
@@ -56,6 +56,10 @@ const [checkboxes, setCheckboxes] = useState([
   const handlePressNewItem = () => {
     navigation.navigate('AddNewItem');
   };
+
+  const handleCategory = () => {
+    navigation.navigate('CategoryManagement')
+  }
 
   const data = [
     { id: 1, title: 'Item 1' },
@@ -151,7 +155,7 @@ const [checkboxes, setCheckboxes] = useState([
                                 </View>
                             ))}
                   </View>
-                  <Pressable className="rounded-lg bg-[#FB814B] text-[#FCFCFC] px-3 py-3 flex justify-center items-center" onPress={() => handlePress()}>
+                  <Pressable className="rounded-lg bg-[#FB814B] text-[#FCFCFC] px-3 py-1 flex justify-center items-center" onPress={() => handleCategory()}>
                                 <Text className="text-[12px] text-white font-bold"> Manage Category </Text>
                             </Pressable>
                 </Pressable>
